@@ -1,0 +1,21 @@
+﻿@model List<Note>
+
+@{
+    ViewData["Title"] = "Here are all notes you have";
+}
+<h1>@ViewData["Title"]</h1>
+
+@if (Model.Any())
+{
+    @foreach (Note note in Model)
+    {
+        <div class="note_list">
+            <a asp-action="NoteDetail" class="list-item-link">
+                <div class="panel-body">
+                    @note.Title
+                </div>
+            </a>
+        </div>
+
+    }
+}
